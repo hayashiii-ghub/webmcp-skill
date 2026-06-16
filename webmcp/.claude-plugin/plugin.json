@@ -1,9 +1,14 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "webmcp",
   "description": "Add WebMCP to a web app: expose its forms and actions as structured tools an in-browser AI agent can call via navigator.modelContext, instead of guessing from the screen. Covers declarative form annotation and imperative registerTool, with progressive enhancement, runtime validation, and safety for destructive/outbound actions.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "hayashiii-ghub",
     "url": "https://github.com/hayashiii-ghub"
-  }
+  },
+  "homepage": "https://github.com/hayashiii-ghub/webmcp-skill",
+  "repository": "https://github.com/hayashiii-ghub/webmcp-skill",
+  "license": "MIT",
+  "keywords": ["webmcp", "modelcontext", "browser-agent", "progressive-enhancement", "web"]
 }

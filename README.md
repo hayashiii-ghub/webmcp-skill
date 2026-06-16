@@ -9,11 +9,11 @@ Web アプリに **WebMCP** を追加するための Claude Code プラグイン
 ## インストール
 
 ```sh
-claude plugin marketplace add hayashiii-ghub/webmcp-skill
-claude plugin install webmcp@webmcp-skill
+claude plugin marketplace add https://github.com/hayashiii-ghub/webmcp-skill
+claude plugin install webmcp@webmcp
 ```
 
-公開前にローカルで試す場合：
+ローカルで試す場合：
 
 ```sh
 claude plugin marketplace add ./webmcp-skill
