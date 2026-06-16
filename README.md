@@ -1,47 +1,49 @@
 # webmcp-skill
 
-A Claude Code plugin that teaches the agent how to add **WebMCP** to a web app — exposing its forms and actions as structured tools an in-browser AI agent can call via `navigator.modelContext`, instead of guessing from the screen.
+**日本語** | [English](./README.en.md)
 
-It covers both integration styles (declarative form annotation and imperative `registerTool`) and bakes in the safety defaults: progressive enhancement (no-op on unsupported browsers), runtime validation, single-source limits, and confirmation for destructive/outbound actions.
+Web アプリに **WebMCP** を追加するための Claude Code プラグインです。サイトのフォームや操作を、ブラウザ内の AI エージェントが `navigator.modelContext` 経由で呼べる「構造化ツール」として公開します（画面から推測させるのではなく、確実に操作させる）。
 
-## Install
+宣言型（フォーム注釈）と命令型（`registerTool`）の両方をカバーし、安全な既定値を内蔵しています：progressive enhancement（非対応ブラウザでは no-op）、実行時の入力検証、上限値の単一ソース化、破壊的/外向き操作の確認。
+
+## インストール
 
 ```sh
 claude plugin marketplace add hayashiii-ghub/webmcp-skill
 claude plugin install webmcp@webmcp-skill
 ```
 
-Local testing before publishing:
+公開前にローカルで試す場合：
 
 ```sh
 claude plugin marketplace add ./webmcp-skill
 ```
 
-## Usage
+## 使い方
 
-Open your site's codebase in Claude Code and ask, e.g.:
+サイトのコードベースを Claude Code で開いて、例えばこう頼みます：
 
-> Add WebMCP to my contact page.
+> コンタクトページに WebMCP を追加して。
 
-The skill guides the implementation: which API to use, how to annotate forms / register tools, how to keep sensitive actions safe, and how to make sure nothing breaks for visitors whose browser doesn't support WebMCP yet.
+スキルが実装を案内します：どの API を使うか・フォーム注釈／ツール登録の仕方・機微な操作の安全な扱い・WebMCP 非対応の訪問者でも壊れないようにする方法。
 
-## What's inside
+## 中身
 
 ```
 webmcp/
   .claude-plugin/plugin.json
   skills/webmcp/
-    SKILL.md                       # the guidance the agent reads
+    SKILL.md                       # エージェントが読むガイダンス
     examples/
-      imperative-tools.js          # registerTool template (read-only / mutating / confirm)
-      declarative-form.html        # annotated form template
+      imperative-tools.js          # registerTool 雛形（読み取り専用 / 変更系 / 確認付き）
+      declarative-form.html        # 注釈フォーム雛形
 ```
 
-## Notes
+## メモ
 
-- WebMCP is **experimental** (Chrome origin trial / W3C draft). The spec is moving — the skill points the agent at the current references and tells it to verify exact field/method names.
-- The patterns are distilled from a production imperative WebMCP implementation. Related prior art: the W3C draft (https://webmachinelearning.github.io/webmcp) and Chrome's docs (https://developer.chrome.com/docs/ai/webmcp), and the `getmasset/webmcp-skill` plugin.
+- WebMCP は**実験的**な仕様です（Chrome origin trial / W3C draft）。仕様が流動的なため、スキルは最新リファレンスを参照させ、正確なフィールド名・メソッド名は都度確認するよう促します。
+- 本パターンは本番の命令型 WebMCP 実装から蒸留したものです。関連: W3C draft (https://webmachinelearning.github.io/webmcp)、Chrome ドキュメント (https://developer.chrome.com/docs/ai/webmcp)、`getmasset/webmcp-skill` プラグイン。
 
-## License
+## ライセンス
 
 MIT
