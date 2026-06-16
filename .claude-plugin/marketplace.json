@@ -1,0 +1,16 @@
+{
+  "name": "webmcp-skill",
+  "owner": {
+    "name": "hayashiii-ghub",
+    "url": "https://github.com/hayashiii-ghub"
+  },
+  "plugins": [
+    {
+      "name": "webmcp",
+      "source": "https://github.com/hayashiii-ghub/webmcp-skill.git",
+      "subdirectory": "webmcp",
+      "description": "Add WebMCP to a web app: expose its forms and actions as structured tools an in-browser AI agent can call via navigator.modelContext — with progressive enhancement, runtime validation, and safety for destructive actions.",
+      "version": "0.1.0"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+<!--
+  WebMCP declarative form — annotate an existing HTML form so an in-browser
+  AI agent can fill and submit it as a structured tool.
+
+  Principles:
+   - Progressive enhancement: browsers without WebMCP simply ignore the
+     tool* attributes and render a normal form.
+   - `toolautosubmit` is intentionally OMITTED so the user reviews before the
+     form is sent (important for anything outbound/destructive).
+   - Server-side validation and auth still apply — WebMCP adds no auth.
+   - Verify exact attribute names against current origin-trial docs; the spec
+     is still moving.
+-->
+<form
+  action="/contact"
+  method="post"
+  toolname="send_contact_message"
+  tooldescription="Send a message to the site owner through the contact form."
+>
+  <label>
+    Email
+    <input
+      type="email"
+      name="email"
+      required
+      toolparamtitle="Email"
+      toolparamdescription="The sender's email address."
+    />
+  </label>
+
+  <label>
+    Message
+    <textarea
+      name="message"
+      required
+      maxlength="1000"
+      toolparamtitle="Message"
+      toolparamdescription="The message body (1000 characters or fewer)."
+    ></textarea>
+  </label>
+
+  <button type="submit">Send</button>
+</form>
