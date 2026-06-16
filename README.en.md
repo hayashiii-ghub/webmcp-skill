@@ -9,11 +9,11 @@ It covers both integration styles (declarative form annotation and imperative `r
 ## Install
 
 ```sh
-claude plugin marketplace add hayashiii-ghub/webmcp-skill
-claude plugin install webmcp@webmcp-skill
+claude plugin marketplace add https://github.com/hayashiii-ghub/webmcp-skill
+claude plugin install webmcp@webmcp
 ```
 
-Local testing before publishing:
+Local testing:
 
 ```sh
 claude plugin marketplace add ./webmcp-skill

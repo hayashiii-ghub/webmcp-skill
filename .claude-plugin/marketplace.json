@@ -1,5 +1,6 @@
 {
-  "name": "webmcp-skill",
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "webmcp",
   "owner": {
     "name": "hayashiii-ghub",
     "url": "https://github.com/hayashiii-ghub"
